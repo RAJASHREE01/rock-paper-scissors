@@ -1,0 +1,1 @@
+Rock paper scissors game with 5 rounds using basic javascript, score displayed in the console at the end of 5 rounds.

@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta charset = 'utf-8'>
+    </head>
+	<body>
+    <script>
+		var playerScore=0,computerScore=0;
+        function playRound() 
+        {   
+            let playerSelection = prompt('enter your selection');
+            let computerSelection = computerPlay();
+			let p=0,c=0;
+            playerSelection = playerSelection.toLowerCase();
+            if(playerSelection == 'rock')
+            {
+                if(computerSelection == "paper")
+                    c+=1;
+                else if(computerSelection == "scissors")
+                    p+=1; 
+            }
+            else if(playerSelection == 'paper')
+            {
+                if(computerSelection == 'rock')
+                    p+=1;
+                else if(computerSelection == 'scissors')
+                    ce+=1; 
+            }
+            else
+            {
+                if(computerSelection == 'rock')
+                    c+=1; 
+                else if(computerSelection == 'paper')
+                    p+=1; 
+            }
+			updateScore(p,c);
+        }   
+        function computerPlay()
+        {
+            let r = Math.floor(Math.random()*10);
+            if(r<=3.33) 
+                computerSelection = "rock";
+            else if(r<=6.66) 
+                computerSelection = "paper";
+            else 
+                computerSelection = "scissors";
+            return computerSelection;
+        } 
+        function updateScore(p,c)
+		{
+			playerScore += p;
+			computerScore += c;
+		}
+        function game()
+        {
+            let i;
+            for(i=0;i<5;i++)
+                playRound();
+            if(playerScore>computerScore)
+                console.log("score is "+playerScore+'-'+computerScore+' '+"winner:player");
+            else if(playerScore<computerScore)
+                console.log("score is "+playerScore+'-'+computerScore+' '+"winner:computer");
+            else
+                console.log("score is "+playerScore+'-'+computerScore+' '+"draw");
+        } 
+        game();
+    </script>
+	</body>
+</html>
